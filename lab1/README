@@ -1,0 +1,2 @@
+B³¹d OutOfMemoryError wystêpuje, gdy brakuje nastêpuje przepe³nienie bufora pamiêci, tzw. sterty.
+Podczas jego wyst¹pienia, Garbage collector niestety nie jest w stanie nam pomóc.
