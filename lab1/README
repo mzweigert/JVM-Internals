@@ -1,2 +1,2 @@
-Błąd OutOfMemoryError występuje, gdy brakuje następuje przepełnienie bufora pamięci, tzw. sterty.
-Podczas jego wystšpienia, Garbage collector niestety nie jest w stanie nam pomóc.
+Błąd OutOfMemoryError występuje, gdy następuje przepełnienie bufora pamięci, tzw. sterty.
+Podczas jego wystąpienia, Garbage collector niestety nie jest w stanie nam pomóc.
