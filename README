@@ -1,1 +1,5 @@
-mvn exec:java -DOOME
+mvn compile
+
+#lab1:
+mvn exec:java -Dexec.mainClass=com.jvm.internals.OutOfMemoryErrorExample
+
