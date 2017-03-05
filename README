@@ -3,3 +3,5 @@ mvn compile
 #lab1:
 mvn exec:java -Dexec.mainClass=com.jvm.internals.OutOfMemoryErrorExample
 
+#lab2:
+mvn exec:java -Dexec.mainClass=com.jvm.internals.JSONParserExampleTest
