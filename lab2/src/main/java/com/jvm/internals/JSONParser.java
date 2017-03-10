@@ -1,10 +1,10 @@
 package com.jvm.internals;
 
+import com.google.common.collect.Lists;
+
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class JSONParser {
 
@@ -34,8 +34,10 @@ public class JSONParser {
             return val.toString();
         } else if (checkQuotationMarkTypeField(type)) {
             return "\"" + val + "\"";
-        } else if (Collection.class.isAssignableFrom(type)) {
-            return buildJsonForCollection(val);
+        } else if (type.isArray()){
+            return buildJsonForCollection(arrayToList(val));
+        } else if (Collection.class.isAssignableFrom(type) ) {
+            return buildJsonForCollection((ArrayList)val);
         } else {
             return toJSON(val);
         }
@@ -55,11 +57,7 @@ public class JSONParser {
                 clazz.isPrimitive()) && !char.class.isAssignableFrom(clazz);
     }
 
-    private String buildJsonForCollection(Object o) throws IllegalAccessException {
-        List list = (ArrayList) o;
-        if (list == null) {
-            return null;
-        }
+    private String buildJsonForCollection(List list) throws IllegalAccessException {
         StringBuilder builder = new StringBuilder();
         builder.append(" [ ");
         int size = list.size();
@@ -74,4 +72,15 @@ public class JSONParser {
         return builder.toString();
     }
 
+    private List arrayToList(Object array){
+        if(array == null){
+            return Lists.newArrayList();
+        }
+        List list = Lists.newArrayList();
+        int length = Array.getLength(array);
+        for (int i = 0; i < length; i++) {
+            list.add(Array.get(array, i));
+        }
+        return list;
+    }
 }

@@ -20,7 +20,7 @@ public class JSONParserExampleTest {
         estimatedTime = System.nanoTime() - startTime;
         System.out.println("Czas wykonywania algorytmu GSon : " + estimatedTime);
         startTime = System.nanoTime();
-        new JSONObject(sampleObject);
+        new c(sampleObject);
         estimatedTime = System.nanoTime() - startTime;
         System.out.println("Czas wykonywania algorytmu Org Json : " + estimatedTime);
 
@@ -38,15 +38,12 @@ public class JSONParserExampleTest {
         return students;
     }
 
-    private static List<Integer> createSampleGrades() {
-        List<Integer> students = new ArrayList<Integer>();
-        students.add(1);
-        students.add(2);
-        students.add(3);
-        students.add(4);
-        students.add(5);
-        students.add(6);
-        return students;
+    private static int[] createSampleGrades() {
+        int[] grades = new int[5];
+        for(int i=0; i< 5; i++){
+            grades[i] = i *2;
+        }
+        return grades;
     }
 
     static enum Type {
@@ -60,10 +57,10 @@ public class JSONParserExampleTest {
         Double height;
         Type type;
         List<Student> colegues;
-        List<Integer> grades;
+        int[] grades;
         Character b;
 
-        public Student(String name, String surname, int age, double height, Type type, List<Student> colegues, List<Integer> grades, char b) {
+        public Student(String name, String surname, int age, double height, Type type, List<Student> colegues, int[] grades, char b) {
             this.name = name;
             this.surname = surname;
             this.age = age;

@@ -1,1 +1,6 @@
 JSON Parser
+
+Wykorzystane bibliotek pomocniczne : GoogleGuava
+Wykorzystane biblioteki do porównania: GSon, JSONObject
+Mechanizm parsera oparty o refleksję,
+parser działa dla obiektów, typów prostych, kolekcji, tablic
