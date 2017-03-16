@@ -20,7 +20,7 @@ public class JSONParserExampleTest {
         estimatedTime = System.nanoTime() - startTime;
         System.out.println("Czas wykonywania algorytmu GSon : " + estimatedTime);
         startTime = System.nanoTime();
-        new c(sampleObject);
+        new JSONObject(sampleObject);
         estimatedTime = System.nanoTime() - startTime;
         System.out.println("Czas wykonywania algorytmu Org Json : " + estimatedTime);
 

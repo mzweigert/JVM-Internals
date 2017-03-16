@@ -1,0 +1,18 @@
+
+
+Czas w milisekundach, losowy rozmiar obiektu                Czas w milisekundach, sta³y rozmiar obiektu (4096)
+
+
+      |    G1    |    CMS   | ParallelOld |                       |    G1    |    CMS   | ParallelOld |
+------|----------|----------|-------------|                 ------|----------|----------|-------------|
+128M  |   1061   |   1024   |     976     |                 128M  |   2444   |   1647   |     1578    |
+------|----------|----------|-------------|                 ------|----------|----------|-------------|
+512M  |   1035   |   923    |     930     |                 512M  |   2337   |   1483   |     1361    |
+------|----------|----------|-------------|                 ------|----------|----------|-------------|
+1024M |   1257   |   968    |     1017    |                 1024M |   2479   |   1405   |     1354    |
+------|----------|----------|-------------|                 ------|----------|----------|-------------|
+
+WNIOSKI:
+
+Algorytm G1 wypada najgorzej niezale¿nie od rozmiaru sterty wœród ww. algorytmów. Czas dzia³ania algorytmu maleje wraz ze zwiêkszaniem rozmiaru sterty,
+tak jak ParallelOld.
