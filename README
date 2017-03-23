@@ -5,3 +5,6 @@ mvn exec:java -Dexec.mainClass=com.jvm.internals.OutOfMemoryErrorExample
 
 #lab2:
 mvn exec:java -Dexec.mainClass=com.jvm.internals.JSONParserExampleTest
+
+#lab5:
+mvn exec:java -Dexec.mainClass=com.jvm.internals.SimpleDateFormatThreadSafe
