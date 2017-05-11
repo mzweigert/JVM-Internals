@@ -56,7 +56,7 @@ public class CustomerService implements CustomerServiceInterface {
 
 	@Override
 	public double avgOrders(boolean includeEmpty) {
-		// TODO Auto-generated method stub
+		//return customers.stream().mapToInt(c -> c.getBoughtProducts().stream().reduce(Integer::))
 		return 0;
 	}
 
@@ -74,14 +74,12 @@ public class CustomerService implements CustomerServiceInterface {
 
 	@Override
 	public int countBuys(Product p) {
-//		return (int) customers.stream().mapToInt(c -> c.getBoughtProducts().stream().filter(product -> product.getId() == p.getId()).count()).();
-		return 0;
+		return 0; //return customers.stream().map(c -> c.getBoughtProducts().stream().filter(pr -> pr.getId() == p.getId())
 	}
 
 	@Override
 	public int countCustomersWhoBought(Product p) {
-//		return (int) customers.stream().map(c -> c.getBoughtProducts().stream().anyMatch(product -> product.getId() == p.getId())).count();
-		return 0;
+		return 0; // customers.stream().map(c -> c.getBoughtProducts().stream().filter(product -> product.getId() == p.getId()));
 	}
 
 }
