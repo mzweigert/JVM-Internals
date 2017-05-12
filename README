@@ -8,3 +8,7 @@ mvn exec:java -Dexec.mainClass=com.jvm.internals.JSONParserExampleTest
 
 #lab5:
 mvn exec:java -Dexec.mainClass=com.jvm.internals.SimpleDateFormatThreadSafe
+
+#lab11:
+mvn exec:java -Dexec.mainClass=com.jvm.internals.PowRestApi
+
