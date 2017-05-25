@@ -18,6 +18,7 @@
         <module>lab9</module>
         <module>lab10</module>
         <module>lab11</module>
+        <module>lab13</module>
     </modules>
     <dependencies>
         <dependency>
