@@ -19,7 +19,10 @@ public class App {
             Method multiply = c.getMethod("multiply", int.class);
             multiply.invoke(o , i);
         }
+        System.out.println("-------------- Elapsed Time --------------" );
         System.out.println(System.currentTimeMillis() - elapsedTime);
+        System.out.println("------------------------------------------" );
+
     }
     public static void main(String[] args) {
         try {

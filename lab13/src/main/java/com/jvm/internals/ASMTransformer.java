@@ -24,10 +24,9 @@ public class ASMTransformer implements ClassFileTransformer {
         byte[] result = bytes;
 
         if (className.contains("DummyClass")) {
-
             ClassWriter cw = new ClassWriter(0);
             ClassReader cr = new ClassReader(bytes);
-            cr.accept(new PrintStringClassAdapter(cw), 0);
+            cr.accept(new PrintStringClassAdapter(cw, className), 0);
             result = cw.toByteArray();
         }
 
@@ -36,27 +35,31 @@ public class ASMTransformer implements ClassFileTransformer {
 
     private class PrintStringClassAdapter extends ClassVisitor {
 
-        public PrintStringClassAdapter(ClassVisitor cv) {
+        private String className;
+        public PrintStringClassAdapter(ClassVisitor cv, String className) {
             super(Opcodes.ASM4, cv);
+            this.className = className;
         }
 
         @Override
         public MethodVisitor visitMethod(int access, String name,
                                          String descriptor, String signature, String[] exceptions) {
             return new PrintStringMethodAdapter(super.visitMethod(access, name,
-                    descriptor, signature, exceptions), name, descriptor);
+                    descriptor, signature, exceptions), name, descriptor, className);
         }
     }
 
     private class PrintStringMethodAdapter extends MethodVisitor {
+        private String className;
         private String methodName;
         private String methodDescriptor;
 
         public PrintStringMethodAdapter(MethodVisitor visitor, String name,
-                                        String descriptor) {
+                                        String descriptor, String className) {
             super(Opcodes.ASM4, visitor);
-            methodName = name;
-            methodDescriptor = descriptor;
+            this.className = className;
+            this.methodName = name;
+            this.methodDescriptor = descriptor;
         }
 
         @Override
@@ -69,14 +72,18 @@ public class ASMTransformer implements ClassFileTransformer {
                         "out", "Ljava/io/PrintStream;");
                 // load the constant string we want to print into the stack
                 // this string is created by the values we get from ASM
-                super.visitLdcInsn("ASM: Method called " + methodName + "  "
+                super.visitLdcInsn("ASM Invoking : " + methodName + "  from " + getShortClassName(className)
                         + methodDescriptor);
                 // trigger the method instruction for 'println'
                 super.visitMethodInsn(Opcodes.INVOKEVIRTUAL,
                         "java/io/PrintStream", "println",
-                        "(Ljava/lang/String;)V", true);
+                        "(Ljava/lang/String;)V", false);
             }
         }
+    }
+
+    private String getShortClassName(String slashClassName){
+        return slashClassName.substring(slashClassName.lastIndexOf("/") + 1);
     }
 
 }

@@ -28,7 +28,7 @@ public class JavassistTransformer implements ClassFileTransformer {
             ClassPool cp = ClassPool.getDefault();
             CtClass ctClazz = cp.get(dotClassName);
             for (CtMethod method : ctClazz.getDeclaredMethods()){
-                method.insertBefore("System.out.println(\"Invoking : " + method.getName() + " from " + getShortClassName(dotClassName) + " \");");
+                method.insertBefore("System.out.println(\"Javassist Invoking : " + method.getName() + " from " + getShortClassName(dotClassName) + " \");");
             }
             result = ctClazz.toBytecode();
         }

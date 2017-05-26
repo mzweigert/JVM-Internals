@@ -6,7 +6,7 @@ public class ByteCodeAgent {
 
     public static void premain(String agentArgs, Instrumentation inst) {
         // Transformer registration
-        //inst.addTransformer(new JavassistTransformer());
-        inst.addTransformer(new ASMTransformer());
+        inst.addTransformer(new JavassistTransformer());
+        //inst.addTransformer(new ASMTransformer());
     }
 }
