@@ -1,2 +1,10 @@
+# OutOfMemoryError
+
+### Aby uruchomić należy wpisac w CMD:
+
+1. cd JVMInternals/lab1
+2. mvn install exec:java
+
+
 Błąd OutOfMemoryError występuje, gdy następuje przepełnienie bufora pamięci, tzw. sterty.
 Podczas jego wystąpienia, Garbage collector niestety nie jest w stanie nam pomóc.

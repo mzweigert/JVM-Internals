@@ -1,3 +1,11 @@
+# SimpleDateFormat
+
+### Aby uruchomić należy wpisac w CMD:
+
+1. cd JVMInternals/lab5
+2. mvn install exec:java
+
+
 Klasa simple date format zawiera dwa wywolania metody runThreads, ktora przyjmuje argumenty : liczba watkow i czy wywolanie metody parse
   klasy SimpleDateFormat ma byc synchroniczne czy nie.
 Przy wywolaniu nie syhcronicznym metoda parse wpisuje nie prawidlowe daty, rzuca wyjatki, co pokazuje, ze klasa SimpleDateFormat jest "not thread safe",

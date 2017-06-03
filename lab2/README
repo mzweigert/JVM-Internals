@@ -1,6 +1,14 @@
+# JsonParser
+
+### Aby uruchomić należy wpisac w CMD:
+
+1. cd JVMInternals/lab2
+2. mvn install exec:java
+
+
 JSON Parser
 
 Wykorzystane bibliotek pomocniczne : GoogleGuava
 Wykorzystane biblioteki do porównania: GSon, JSONObject
 Mechanizm parsera oparty o refleksje,
-parser dzial�a dla obiektow, typow prostych, kolekcji, tablic
+parser dzial�a dla obiektow, typow prostych, kolekcji, tablic

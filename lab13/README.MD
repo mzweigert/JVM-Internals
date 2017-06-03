@@ -1,9 +1,9 @@
+# Zmiana ciała metody multiply oraz mierzenie jej czasu ASM transformer i Javassist transformer
 
-Mierzenie czasu ASM transformer i Javassist transformer
+### Aby uruchomić należy wpisac w CMD:
 
 
-Jak uruchomić:
-wchodzimy do katalogu com/jvm/internals/dummy, uruchamiamy skrypt generate_class.sh 5000 i czekamy aż się wykona
+wchodzimy do katalogu com/jvm/internals/dummy, uruchamiamy skrypt komendą `./generate_class.sh 5000` i czekamy aż się wykona
 cd ..
-mvn package
-mvn exec:exec
+mvn install exec:exec
+

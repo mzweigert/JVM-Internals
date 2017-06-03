@@ -1,3 +1,9 @@
+# Garbage Collector Benchmark
+
+### Aby uruchomić należy wpisac w CMD:
+
+1. cd JVMInternals/lab3
+2. mvn install exec:java
 
 
 Czas w milisekundach, losowy rozmiar obiektu        Czas w milisekundach, stały rozmiar obiektu (4096)

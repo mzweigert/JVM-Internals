@@ -14,9 +14,6 @@
     <artifactId>lab2</artifactId>
     <version>1.0</version>
 
-    <build>
-        <outputDirectory>../target/classes</outputDirectory>
-    </build>
     <dependencies>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -34,7 +31,24 @@
             <artifactId>guava</artifactId>
             <version>21.0</version>
         </dependency>
-
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.jvm.internals.JSONParserExampleTest</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

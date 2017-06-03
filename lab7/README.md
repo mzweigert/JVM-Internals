@@ -1,12 +1,12 @@
+# Modyfikacja metod oznaczonych
+# adnotacją `@MeasureTime` z użyciem javaassist.
 
-Modyfikacja metod oznaczonych
-adnotacją `@MeasureTime` z użyciem javaassist.
+### Aby uruchomić należy wpisac w CMD:
 
 
-Jak uruchomić:
 ```
-mvn package
-mvn exec:exec
+1. cd JVMInternals/lab7
+2. mvn install exec:java
 uruchamiamy przeglądarkę i wpisujemy adres - > localhost:4567/cokolwiek
 
 ```
